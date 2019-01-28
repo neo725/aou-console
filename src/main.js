@@ -3,8 +3,10 @@ import BootstrapVue from "bootstrap-vue"
 import App from './App.vue'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-vue/dist/bootstrap-vue.css"
-import "./theme/material-dashboard-html-v2.1.1/assets/css/material-dashboard.css"
+// import "./theme/material-dashboard-html-v2.1.1/assets/css/material-dashboard.css"
 // import "./theme/material-dashboard-html-v2.1.1/assets/demo/demo.css"
+import 'adminlte/css/adminlte.css'
+import 'adminlte/css/skins/skin-blue.css'
 
 Vue.use(BootstrapVue)
 
