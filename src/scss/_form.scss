@@ -1,0 +1,17 @@
+$error-color: #dd4b39;
+
+.form-group {
+    
+    .row-2 {
+
+        &:not(:first-child) {
+            margin-top: 12px !important;
+        }
+    }
+
+    &.has-group-error {
+        & > label {
+            color: $error-color;
+        }
+    }
+}

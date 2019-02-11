@@ -1,5 +1,21 @@
 {
+  "plugins": ["babel-plugin-root-import"],
+  
+  "env": {
+
+  },
+
   "presets": [
-    ["env", { "modules": false }]
+    [
+      "env", { "modules": false }
+    ],
+    // 如果沒有設定 presets 中有 stage-2
+    // 會發生這樣的錯誤
+    // ...mapGetters(['todos'])
+    // SyntaxError: Unexpected token
+    // 參考 :
+    // Syntax error: using spread operator with vuejs
+    // https://github.com/vuejs/vue-loader/issues/663
+    "stage-2"
   ]
 }

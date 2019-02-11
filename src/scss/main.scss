@@ -1,0 +1,17 @@
+/*
+webpack 的 rule 對於 scss 的定義要如下，才能使用 _{name}.scss 的簡式引入
+{
+    test: /\.scss$/,
+    use: [
+        'vue-style-loader',
+        'css-loader',
+        'sass-loader'
+    ]
+}
+*/
+@import './button';
+@import './label';
+@import './table';
+@import './form';
+@import './component';
+@import './common';

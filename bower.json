@@ -1,0 +1,21 @@
+{
+  "name": "aou_console",
+  "description": "A Vue.js project",
+  "main": "",
+  "authors": [
+    "Neo Chang <neo725@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/neo725/aou-console",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "jquery": "^3.3.1"
+  }
+}
