@@ -23,30 +23,36 @@
                 <table class="table table-hover" v-if="!isLoading">
                     <tbody>
                         <tr>
+                            <th></th>
                             <th v-show="false">ID</th>
                             <th style="width: 35%">Title</th>
                             <th>Date</th>
                             <th>Status</th>
                             <th style="width: 25%">Note</th>
+                            <th></th>
                         </tr>
                         <tr v-for="schedule in orderedList" :key="schedule.id">
+                            <td><a class="btn" v-on:click="isAddScheduleVisible = true">
+                                    <i class="fa fa-pencil"></i> Edit
+                                </a></td>
                             <td v-show="false">{{ schedule.id }}</td>
-                            <td>{{ schedule.title }}</td>
+                            <td>
+                                {{ schedule.title }}
+                            </td>
                             <td class="text-date">
                                 <div class="label">{{ schedule.start }}</div>
-                                <div class="text"
-                                     v-show="schedule.is_duration"> ~ </div>
-                                <div class="label" 
-                                     v-show="schedule.is_duration">{{ schedule.end }}</div></td>
+                                <div class="text" v-show="schedule.is_duration"> ~ </div>
+                                <div class="label" v-show="schedule.is_duration">{{ schedule.end }}</div>
+                            </td>
                             <td>
-                                <span class="label label-success"
-                                      v-if="schedule.status == 'running'">Running</span>
-                                <span class="label bg-gray"
-                                      v-if="schedule.status == 'expired'">Expired</span>
-                                <span class="label label-primary"
-                                      v-if="schedule.status == 'not-begin'">Not yet</span>
+                                <span class="label label-success" v-if="schedule.status == 'running'">Running</span>
+                                <span class="label bg-gray" v-if="schedule.status == 'expired'">Expired</span>
+                                <span class="label label-primary" v-if="schedule.status == 'not-begin'">Not yet</span>
                             </td>
                             <td>{{ schedule.note }}</td>
+                            <td><a class="btn" v-on:click="isAddScheduleVisible = true">
+                                    <i class="fa fa-trash"></i> Delete
+                                </a></td>
                         </tr>
 
                     </tbody>
@@ -137,7 +143,7 @@
         computed: {
             ...mapGetters(['Schedules']),
 
-            normalizedList () {
+            normalizedList() {
                 //return this.Schedules.map((elm) => this.prepareSchedule(elm))
                 let _list =
                     this.Schedules.map((elm) => this.prepareSchedule(elm))
@@ -145,7 +151,7 @@
                 return _list
             },
 
-            orderedList () {
+            orderedList() {
                 return this.normalizedList.sort((a, b) => a.sort - b.sort)
             }
         },

@@ -7,10 +7,13 @@
   "scripts": {
     "__dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
+    "web": "npm run dev",
     "__start": "npm run build && node server.js",
     "_start": "npm run dev && npm run server",
-    "start": "echo 'npm run server' and then 'npm run dev'",
+    "___start": "echo 'npm run server' and then 'npm run dev'",
+    "start": "echo 'npm run api' and then 'npm run web'",
     "server": "node server.js",
+    "api": "npm run server",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
